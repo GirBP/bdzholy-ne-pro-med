@@ -4,26 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Бджоли не про мед — книга у мемах</title>
-<meta name="description" content="Науково-популярна книга про бджіл у мемах: 48 мемів, 15 розділів і жодного вигаданого факту.">
+<meta name="description" content="Науково-популярна книга про бджіл у мемах: 48 мемів, 13 розділів (плюс пролог і епілог) — і жодного вигаданого факту.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐝%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://girbp.github.io/bdzholy-ne-pro-med/">
 <meta property="og:title" content="Бджоли не про мед — книга у мемах">
 <meta property="og:description" content="48 мемів і жодного вигаданого факту. Науково-популярна книга про бджіл.">
-<meta property="og:image" content="меми/експорт/og_фото.png">
+<meta property="og:image" content="https://girbp.github.io/bdzholy-ne-pro-med/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="uk_UA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Бджоли не про мед — книга у мемах">
 <meta name="twitter:description" content="48 мемів і жодного вигаданого факту.">
-<meta name="twitter:image" content="меми/експорт/og_фото.png">
+<meta name="twitter:image" content="https://girbp.github.io/bdzholy-ne-pro-med/og-cover.png">
 <style>
   :root{
-    --cream:#fffdf6; --honey:#f6b21b; --honey-deep:#e0980a;
+    --cream:#fffdf6; --honey:#f6b21b; --honey-deep:#9c6209;
     --ink:#17130a; --muted:#6b6350; --frame:#17130a; --card:#fffefb; --line:#eadfc4;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:var(--cream);color:var(--ink);
+  body{margin:0;background:var(--cream) repeating-linear-gradient(120deg,rgba(246,178,27,.045) 0 40px,transparent 40px 80px);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     line-height:1.55;-webkit-font-smoothing:antialiased}
   #progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--honey);z-index:60;transition:width .1s linear}
@@ -42,10 +44,7 @@
   nav#toc .n{display:inline-block;min-width:22px;color:var(--honey-deep);font-weight:800}
   main{max-width:660px;margin:0 auto;padding:0 18px 90px}
   .hero{padding:66px 0 46px;text-align:center;border-bottom:2px dashed #e6d7ae}
-  .hero .kick{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--honey-deep);font-weight:800}
-  .hero h1{font-size:46px;margin:8px 0 6px;font-weight:900;letter-spacing:-1px;line-height:1.02}
   .hero .sub{color:var(--muted);font-size:17px;max-width:36ch;margin:10px auto 0}
-  .hero .bee{font-size:40px;margin-bottom:6px}
   .chap{padding:52px 0 8px;scroll-margin-top:60px}
   .chap .cnum{font-size:60px;font-weight:900;color:var(--honey);line-height:1;letter-spacing:-2px;text-shadow:2px 2px 0 var(--ink)}
   .chap h2{font-size:29px;margin:2px 0 4px;font-weight:900;letter-spacing:-.4px}
@@ -60,9 +59,11 @@
     background:repeating-linear-gradient(135deg,#fde9b8 0 22px,#fce1a0 22px 44px);
     box-shadow:6px 6px 0 rgba(23,19,10,.12)}
   .frame .ph{position:absolute;top:7px;right:10px;font-size:10.5px;font-weight:700;color:#8a7a4d}
-  .hero .cover{width:100%;max-width:460px;display:block;margin:0 auto;border-radius:18px;
+  .hero .cover{width:100%;max-width:460px;display:block;aspect-ratio:3/4;object-fit:cover;margin:0 auto;border-radius:18px;
     border:3px solid var(--frame);box-shadow:8px 10px 0 rgba(23,19,10,.15)}
-  .memeimg{width:100%;display:block;border:3px solid var(--frame);border-radius:14px;box-shadow:6px 6px 0 rgba(23,19,10,.12)}
+  .meme:nth-of-type(even) .memeimg{transform:rotate(-.5deg)}
+  .meme:nth-of-type(odd) .memeimg{transform:rotate(.5deg)}
+  .memeimg{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;border:3px solid var(--frame);border-radius:14px;box-shadow:6px 6px 0 rgba(23,19,10,.12)}
   .frame .txt{padding:30px 20px 26px;min-height:120px;display:flex;align-items:center;justify-content:center;
     font-family:"Impact","Haettenschweiler","Arial Narrow Bold",system-ui,sans-serif;
     text-transform:uppercase;color:#fff;text-align:center;font-weight:400;line-height:1.18;letter-spacing:.3px;
@@ -73,7 +74,7 @@
   .bridge{margin:40px 0 4px;padding:20px 22px;border-radius:14px;background:var(--ink);color:var(--cream);text-align:center}
   .bridge .arrow{font-size:20px;color:var(--honey)}
   .bridge p{margin:6px 0 0;font-size:15.5px}
-  footer{margin-top:56px;text-align:center;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:20px}
+  footer{margin-top:40px;text-align:center;color:var(--muted);font-size:12.5px;border-top:2px dashed #e6d7ae;padding-top:28px}
   footer b{color:var(--honey-deep)}
 </style>
 </head>
@@ -87,14 +88,23 @@
 
 <main id="main">
   <section class="hero">
+    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Бджоли не про мед — книга у мемах</h1>
     <img class="cover" src="меми/експорт/обкладинка_фото.webp" alt="Обкладинка книги «Бджоли не про мед» — книга у мемах, 48 мемів і жодного вигаданого факту">
-    <p class="sub">Науково-популярна книга про бджіл, де кожен факт подано через мем. 15 розділів, 48 мемів — і жодного вигаданого факту: усе звірено з науковими джерелами.</p>
+    <p class="sub">Для тих, хто плутає бджіл з осами і досі вірить, що «джміль не повинен літати». 13 розділів, 48 мемів, ~20 хвилин читання — і жодного нудного абзацу.</p>
   </section>
   <div id="book"></div>
+  <div style="margin:46px 0 8px;text-align:center">
+    <p style="font-weight:800;font-size:17px;margin-bottom:12px">Забрати з собою</p>
+    <a href="друк/Бджоли-не-про-мед.pdf" style="display:inline-block;margin:4px;padding:10px 18px;border-radius:999px;background:var(--honey);border:1px solid var(--ink);font-weight:700;text-decoration:none;color:var(--ink)">📄 PDF</a>
+    <a href="друк/Бджоли-не-про-мед.epub" style="display:inline-block;margin:4px;padding:10px 18px;border-radius:999px;background:var(--honey);border:1px solid var(--ink);font-weight:700;text-decoration:none;color:var(--ink)">📱 EPUB</a>
+    <a href="комікс/index.html" style="display:inline-block;margin:4px;padding:10px 18px;border-radius:999px;background:var(--ink);border:1px solid var(--ink);font-weight:700;text-decoration:none;color:var(--honey)">🦁 Комікс-спінофф</a>
+  </div>
   <footer>
-    Скрол-книга · 15 розділів · 48 мемів · усі факти перевірено за науковими джерелами<br>
-    Меми зібрано зі справжніх фото (Wikimedia Commons, вільні ліцензії) · наскрізна героїня — бджола <b>Жужа</b> 🐝
-  <details style="margin-top:14px;font-size:11.5px;color:#8a7a4d"><summary style="cursor:pointer;font-weight:700">📷 Фото: Wikimedia Commons — автори й ліцензії</summary><div style="text-align:left;max-width:600px;margin:8px auto;line-height:1.7"><a href="https://commons.wikimedia.org/w/index.php?curid=171848404" style="color:#8a7a4d">Honey bee on oregano flower.jpg</a> — Conall (cc by 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=130945" style="color:#8a7a4d">Osmia rufa couple (aka).jpg</a> — André Karwath aka Aka (cc by-sa 2.5) · <a href="https://commons.wikimedia.org/w/index.php?curid=71383003" style="color:#8a7a4d">Vespula (54839296).jpg</a> — Claudio Bacchiani (cc by 3.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=187172420" style="color:#8a7a4d">A bee taking a rest. Bee Wings - Flickr - John K</a> — John K Thorne (cc by 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=153701367" style="color:#8a7a4d">Apis mellifera honeycomb beekeeping2.jpg</a> — невідомий автор (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=147812580" style="color:#8a7a4d">2024-04-27 12 46 54 A honey bee swarm on a fir t</a> — Famartin (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=45041890" style="color:#8a7a4d">HoneyComb.jpg</a> — Joska16 (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=29517672" style="color:#8a7a4d">Apis mellifera, Drone, face2, MD, Talbot County </a> — USGS Bee Inventory and Monitoring Lab fr (public domain) · <a href="https://commons.wikimedia.org/w/index.php?curid=118183972" style="color:#8a7a4d">Abeilles (Apis mellifera) sur un cadre (Colmar) </a> — Gzen92 (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=24894379" style="color:#8a7a4d">Banana fruit on white background.jpg</a> — Titus Tscharntke (public domain) · <a href="https://commons.wikimedia.org/w/index.php?curid=144950877" style="color:#8a7a4d">Inside of double sided refrigerator.jpg</a> — Candeadly (cc by 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=11320468" style="color:#8a7a4d">Pot et Cuillère à miel.JPG</a> — Véronique PAGNIER (public domain) · <a href="https://commons.wikimedia.org/w/index.php?curid=114110202" style="color:#8a7a4d">Honey dipper, wooden.jpg</a> — Alexandar Vujadinovic (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=188815439" style="color:#8a7a4d">Golden mask of Tutankhamun.jpg</a> — Thomas Clouet (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=143401979" style="color:#8a7a4d">Wax foundation - Flickr - conall...jpg</a> — Conall from Downpatrick, Northern Irelan (cc by 2.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=72590953" style="color:#8a7a4d">Honey Bee gathering pollen image by Dr. Raju Kas</a> — Dr. Raju Kasambe (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=160948735" style="color:#8a7a4d">Beehives in Butte County (2025)-104A8312.jpg</a> — Frank Schulenburg (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=13887053" style="color:#8a7a4d">Smoke gun.jpg</a> — Peter Grima (cc by-sa 2.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=48853439" style="color:#8a7a4d">Unbmpetro.jpg</a> — Sabinlarsen (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=130221165" style="color:#8a7a4d">Pysanka Eggs.jpg</a> — Yevtushuk Victor (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=2448082" style="color:#8a7a4d">Varroa destructor on honeybee host.jpg</a> — Courtesy, Eric Erbe, Christopher Pooley: (public domain) · <a href="https://commons.wikimedia.org/w/index.php?curid=546742" style="color:#8a7a4d">Jacques-Louis David - The Coronation of Napoleon</a> — Jacques-Louis David / Georges Rouget (public domain) · <a href="https://commons.wikimedia.org/w/index.php?curid=56206334" style="color:#8a7a4d">Flying bumblebee.jpg</a> — Mikkel Houmøller (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=143901112" style="color:#8a7a4d">Bumble Bee on Sunflower (macro).jpg</a> — Nikk (cc by 2.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=106141816" style="color:#8a7a4d">Dülmen, Kirchspiel, Dernekamp, Getreide bei Sonn</a> — Dietmar Rabich (cc by-sa 4.0) · <a href="https://commons.wikimedia.org/w/index.php?curid=102420987" style="color:#8a7a4d">Bohemia apples in basket 3.jpg</a> — T. Kebert (cc by-sa 4.0)</div></details>
+    Скрол-книга · 13 розділів (+ пролог і епілог) · 48 мемів · усі факти перевірено за науковими джерелами<br>
+    Меми зібрано зі справжніх фото (Wikimedia Commons, вільні ліцензії) · наскрізна героїня — бджола <b>Жужа</b> 🐝<br>
+    <span style="display:block;margin-top:10px">© 2026 · GirBP · <a href="mailto:giryanskbogdan@gmail.com" style="color:var(--honey-deep)">написати автору</a></span>
+    <a href="#main" style="display:inline-block;margin-top:14px;font-weight:700;font-size:13px;border:1px solid var(--ink);background:var(--honey);color:var(--ink);padding:6px 16px;border-radius:999px;text-decoration:none">Нагору ↑</a>
+  <details style="margin-top:14px;font-size:11.5px;color:#7a6640"><summary style="cursor:pointer;font-weight:700">📷 Фото: Wikimedia Commons — автори й ліцензії</summary><ul style="columns:2;column-gap:22px;padding-left:18px;margin:10px auto;list-style:disc;text-align:left;max-width:620px;color:#7a6640"><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=171848404" style="color:#7a6640">Honey bee on oregano flower.jpg</a> — Conall (cc by 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=130945" style="color:#7a6640">Osmia rufa couple (aka).jpg</a> — André Karwath aka Aka (cc by-sa 2.5)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=71383003" style="color:#7a6640">Vespula (54839296).jpg</a> — Claudio Bacchiani (cc by 3.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=187172420" style="color:#7a6640">A bee taking a rest. Bee Wings - Flickr - John K</a> — John K Thorne (cc by 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=153701367" style="color:#7a6640">Apis mellifera honeycomb beekeeping2.jpg</a> — невідомий автор (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=147812580" style="color:#7a6640">2024-04-27 12 46 54 A honey bee swarm on a fir t</a> — Famartin (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=45041890" style="color:#7a6640">HoneyComb.jpg</a> — Joska16 (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=29517672" style="color:#7a6640">Apis mellifera, Drone, face2, MD, Talbot County </a> — USGS Bee Inventory and Monitoring Lab fr (public domain)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=118183972" style="color:#7a6640">Abeilles (Apis mellifera) sur un cadre (Colmar) </a> — Gzen92 (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=24894379" style="color:#7a6640">Banana fruit on white background.jpg</a> — Titus Tscharntke (public domain)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=144950877" style="color:#7a6640">Inside of double sided refrigerator.jpg</a> — Candeadly (cc by 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=11320468" style="color:#7a6640">Pot et Cuillère à miel.JPG</a> — Véronique PAGNIER (public domain)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=114110202" style="color:#7a6640">Honey dipper, wooden.jpg</a> — Alexandar Vujadinovic (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=188815439" style="color:#7a6640">Golden mask of Tutankhamun.jpg</a> — Thomas Clouet (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=143401979" style="color:#7a6640">Wax foundation - Flickr - conall...jpg</a> — Conall from Downpatrick, Northern Irelan (cc by 2.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=72590953" style="color:#7a6640">Honey Bee gathering pollen image by Dr. Raju Kas</a> — Dr. Raju Kasambe (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=160948735" style="color:#7a6640">Beehives in Butte County (2025)-104A8312.jpg</a> — Frank Schulenburg (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=13887053" style="color:#7a6640">Smoke gun.jpg</a> — Peter Grima (cc by-sa 2.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=48853439" style="color:#7a6640">Unbmpetro.jpg</a> — Sabinlarsen (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=130221165" style="color:#7a6640">Pysanka Eggs.jpg</a> — Yevtushuk Victor (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=2448082" style="color:#7a6640">Varroa destructor on honeybee host.jpg</a> — Courtesy, Eric Erbe, Christopher Pooley: (public domain)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=546742" style="color:#7a6640">Jacques-Louis David - The Coronation of Napoleon</a> — Jacques-Louis David / Georges Rouget (public domain)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=56206334" style="color:#7a6640">Flying bumblebee.jpg</a> — Mikkel Houmøller (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=143901112" style="color:#7a6640">Bumble Bee on Sunflower (macro).jpg</a> — Nikk (cc by 2.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=106141816" style="color:#7a6640">Dülmen, Kirchspiel, Dernekamp, Getreide bei Sonn</a> — Dietmar Rabich (cc by-sa 4.0)</li><li style="margin-bottom:6px"><a href="https://commons.wikimedia.org/w/index.php?curid=102420987" style="color:#7a6640">Bohemia apples in basket 3.jpg</a> — T. Kebert (cc by-sa 4.0)</li></ul></details>
 </footer>
 </main>
 
@@ -107,7 +117,7 @@ const BOOK = [
       {t:"Словникове визначення-пародія",f:0,txt:`ЦЯ КНИЖКА, ім., жін.\n1. Науково-популярне видання про бджіл — у мемах.\n2. Побічна дія: стійка відраза до бананового парфуму біля вуликів АБО довічний імунітет до паніки від дзижчання.\n3. Гарантований результат: ти більше ніколи не назвеш осу бджолою.`,ex:`Пролог одразу чесно каже, що ти отримаєш: не список порад, а конкретну обіцянку. Вона тримається до фінального «вау» у розділі 13.`},
     ], bridge:`Почнемо з незручного: більшість «бджіл», яких ти бачив, — навіть не з тих, що роблять мед.` },
 
-  { n:"1", id:"c1", title:"20 000 видів, і майже жодна не робить мед", angle:"Розбити стереотип «бджола = медоносна»", imgBase:"меми/експорт/01_",
+  { n:"1", id:"c1", title:"20 000 видів, і майже жодна не робить мед", angle:"Стереотип «бджола = мед» — і чому це не так", imgBase:"меми/експорт/01_",
     intro:`Перш ніж говорити про мед, варто розбити головний стереотип: з понад 20 000 видів бджіл мед роблять одиниці.`,
     memes:[
       {t:"They don't know…",f:1,txt:`Тітка на грядках, тицяючи пальцем у бджолу на кульбабці: «Дивись, бджілка! Зара мед понесе до вулика!»\n\nБджола (насправді самітниця: без вулика, без матки, без єдиної краплі меду за життя): 👁️👄👁️ вони не знають`,ex:`Стереотип «бджола = мед» стосується лише роду Apis — менш ніж 0,1% усіх видів. Більшість із понад 20 000 описаних видів — самітні: без колонії, матки й робочих, і меду не роблять узагалі.`},
@@ -121,13 +131,13 @@ const BOOK = [
     memes:[
       {t:"POV / Макро",f:1,txt:`ФЕЙС-КОНТРОЛЬ, БДЖОЛИНА РЕДАКЦІЯ\n\n«Бейджа не питаю. Питаю запах. Не той — розворот, без обговорень»\n\n(виняток: якщо сім'я ослаблена, грабіжник іноді проходить без черги)`,ex:`Бджоли-охоронниці на льотку перевіряють запах кожної, хто залітає, і зазвичай не пускають чужинців. Але ослаблена сім'я контролює вхід гірше.`},
       {t:"Словникове визначення-пародія",f:0,txt:`НЕКРОФОРЕ́З, -у, ч.\n1. Клінінг-служба вулика: виносить тіла загиблих подалі від дому.\n2. Найкоротший «контракт» у вулику — штат близько 1% населення, і надовго тут не затримуються.`,ex:`Некрофорез — винесення мертвих бджіл за межі вулика «прибиральницями». Цим у будь-який момент займається лише ~1% колонії, і недовго.`},
-      {t:"Комікс 4 кадри",f:0,txt:`1: «Я з краю. Мінус... тримаюсь»\n2: «Ще трохи. Черга рухається»\n3: «Хто в центрі — на вихід, тепер моя черга»\n4: «Тепло. Дожила. Наступна зміна — за розкладом»`,ex:`Узимку бджоли формують щільний клубок: у центрі найтепліше, а особини по черзі міняються місцями — з краю до центру і назад, щоб ніхто не замерз надовго.`},
+      {t:"Мем-історія",f:0,txt:`1: «Я з краю. Мінус... тримаюсь»\n2: «Ще трохи. Черга рухається»\n3: «Хто в центрі — на вихід, тепер моя черга»\n4: «Тепло. Дожила. Наступна зміна — за розкладом»`,ex:`Узимку бджоли формують щільний клубок: у центрі найтепліше, а особини по черзі міняються місцями — з краю до центру і назад, щоб ніхто не замерз надовго.`},
     ], bridge:`У цьому місті ти не обираєш професію — її обирають за тебе ще до народження.` },
 
   { n:"3", id:"c3", title:"Касти: матка, робочі, трутні", angle:"Роль задана з личинки — епігенетикою", imgBase:"меми/експорт/03_",
     intro:`У цьому розділі народжується Жужа — і разом із нею ми з'ясовуємо, що в бджолиному вулику немає нічого «просто так»: навіть те, ким ти станеш, вирішує не доля, а хімія.`,
     memes:[
-      {t:"Комікс «Народження Жужі»",f:1,txt:`1: «Жужа й сусідка через комірку. Однаковий геном. Один день народження. Поки що — однакові шанси»\n2: Сусідці — маточне молочко без обмежень. Жужі — стандарт. «Агов, а мені добавки?» — «У тебе вже норма. Наступна!»\n3: «Це не про смак їжі. Молочко вмикає і вимикає гени — рішення приймає епігенетика»\n4: Сусідка виходить з короною. Жужа — з мітлою. «Матка: 2–5 років і власний вулик. Жужа: 5–6 тижнів, починаючи з прибиральниці»`,ex:`Матка й робочі вилуплюються з генетично ідентичних запліднених яєць — долю вирішує не смак їжі, а <b>епігенетика</b>: маточне молочко змінює метилювання ДНК і гормональний каскад. Матка живе 2–5 років, робоча влітку — лише 5–6 тижнів.`},
+      {t:"Мем-історія «Народження Жужі»",f:1,txt:`1: «Жужа й сусідка через комірку. Однаковий геном. Один день народження. Поки що — однакові шанси»\n2: Сусідці — маточне молочко без обмежень. Жужі — стандарт. «Агов, а мені добавки?» — «У тебе вже норма. Наступна!»\n3: «Це не про смак їжі. Молочко вмикає і вимикає гени — рішення приймає епігенетика»\n4: Сусідка виходить з короною. Жужа — з мітлою. «Матка: 2–5 років і власний вулик. Жужа: 5–6 тижнів, починаючи з прибиральниці»`,ex:`Матка й робочі вилуплюються з генетично ідентичних запліднених яєць — долю вирішує не смак їжі, а <b>епігенетика</b>: маточне молочко змінює метилювання ДНК і гормональний каскад. Матка живе 2–5 років, робоча влітку — лише 5–6 тижнів.`},
       {t:"Villain reveal (Reels)",f:0,txt:`1: «Ціле літо: жери, спи, чекай шансу спаритися. Жала нема — та й нема потреби»\n2: «Наближається осінь. Запаси на зиму підраховано»\n3: «ЗЛОВІСНИЙ ПОВОРОТ: тебе виганяють з вулика. Двері зачинено»\n4: «Зайвий рот перед зимою. Вибач, бро»`,ex:`Трутні не мають жала й не працюють — єдина функція: спарювання, після якого гинуть. Тих, хто не встиг, восени виганяють з вулика: зайві роти перед зимою.`},
       {t:"Expanding Brain",f:0,txt:`1: «Матка просто їсть смачніше»\n2: «Матка їсть тільки маточне молочко»\n3: «Особливий білок вмикає гени росту»\n4 (галактика): «Це епігенетика: молочко перемикає метилювання ДНК — той самий геном, різна доля»`,ex:`Каста визначається не «просто дієтою»: маточне молочко запускає епігенетичні зміни, які перемикають розвиток генетично ідентичної личинки на матку замість робочої.`},
       {t:"Інфографіка-мем",f:0,txt:`«Скільки яєць відкладає ОДНА матка за добу в пік сезону»\n\n2000\n\nБільше за власну вагу. І без обідньої перерви`,ex:`У пік сезону матка відкладає до 2000 яєць на добу — більше за масу власного тіла щодня. Взимку темп падає або спиняється.`},
@@ -179,7 +189,7 @@ const BOOK = [
   { n:"9", id:"c9", title:"Бджоляр і людина", angle:"Одомашнення, якого нема", imgBase:"меми/експорт/09_",
     intro:`Людина «доглядає» вулик тисячоліттями — але статусу господаря так і не отримала. Щонайбільше — орендаря, якому ще й винні.`,
     memes:[
-      {t:"POV / Комікс 4 кадри",f:1,txt:`1: Бджоляр стукає по вулику, як у двері: «Народ, збори. Є новини»\n2: «Настя виходить заміж. Ви — почесні гості. Точніше — постачальники частування»\n3: (тиша; у кутку тремтять вусики Жужі)\n4: «І ще... дід Хома. Вчора. Не стало». Підпис: «Сімейний груповий чат бджоляра — без інтернету, зате з традицією на пару століть»`,ex:`Існував звичай «telling the bees» — бджоляр особисто повідомляв вулик про важливі родинні події: весілля, смерть. Бджіл вважали повноправними членами родини.`},
+      {t:"POV / Мем-історія",f:1,txt:`1: Бджоляр стукає по вулику, як у двері: «Народ, збори. Є новини»\n2: «Настя виходить заміж. Ви — почесні гості. Точніше — постачальники частування»\n3: (тиша; у кутку тремтять вусики Жужі)\n4: «І ще... дід Хома. Вчора. Не стало». Підпис: «Сімейний груповий чат бджоляра — без інтернету, зате з традицією на пару століть»`,ex:`Існував звичай «telling the bees» — бджоляр особисто повідомляв вулик про важливі родинні події: весілля, смерть. Бджіл вважали повноправними членами родини.`},
       {t:"Макро Impact",f:0,txt:`БДЖОЛИ БАЧАТЬ ДИМ ВІД БДЖОЛЯРА\n\nІ ЗАМІСТЬ ТРИВОГИ ВМИКАЮТЬ РЕЖИМ «ЖЕРЕМО МЕД ПРО ЗАПАС, ОХОРОНУ НЕ ЧУЄМО»`,ex:`Дим не «присипляє»: він імітує пожежу — бджоли наїдаються меду про запас, а заразом гірше сприймають феромон тривоги, тож охорона координується слабше. Бджоляру цей побічний ефект якраз і потрібен.`},
       {t:"Trade Offer",f:0,txt:`ТОРГОВА ПРОПОЗИЦІЯ від бджоляра\nВи віддаєте: надлишок меду (так, навіть із Жужиного вулика)\nВи отримуєте: дим в очі раз на сезон і дозвіл дожити до весни\n(заберу забагато — не переживете зиму. Нічого особистого, просто оренда)`,ex:`Бджоляр не «володіє» колонією — він лише «позичає» надлишок меду, а частину обов'язково лишає бджолам на зиму: заберуть забагато — рій загине від голоду. Тому він радше орендар, ніж господар.`},
     ], bridge:`А в нас, в Україні, у цих стосунків людини й бджоли — своя, дуже давня історія.` },
@@ -188,7 +198,7 @@ const BOOK = [
     intro:`Жужин вулик стоїть на українській пасіці — а в українських пасік довга й гонориста історія: тут винайшли сучасний вулик за 38 років до «офіційного» винаходу, тут медом освячують серпень, а воском розписують писанки.`,
     memes:[
       {t:"Макро / «а нам не розказували»",f:1,txt:`1852. ЛАНГСТРОТ ВИНАЙШОВ РАМКОВИЙ ВУЛИК\n\n(людина відкладає підручник): «А нам чомусь не розказували, що це ще в 1814-му зробив українець Прокопович. За 38 років до нього»`,ex:`Петро Прокопович створив перший у світі розбірний рамковий вулик 1814 року — за 38 років до Лангстрота. Винахід дав змогу забирати мед, не знищуючи бджіл димом, а 1827-го він відкрив школу бджільництва — часто її звуть першою в Європі.`},
-      {t:"Комікс 4 кадри",f:0,txt:`1: «13 серпня. Ще один день терпіти»\n2 (натовп під церквою на світанку): «14 серпня, 7:00. Черга на освячення меду — довша за передсвяткову в супермаркеті»\n3: «— Це не забагато? (бабуся з відром) — Це про запас!»\n4: «Медовий Спас. Тепер офіційно можна їсти те, що потайки куштували ще в липні»`,ex:`14 серпня — Медовий (Маковий) Спас, традиційне українське свято з освяченням меду в церкві.`},
+      {t:"Мем-історія",f:0,txt:`1: «13 серпня. Ще один день терпіти»\n2 (натовп під церквою на світанку): «14 серпня, 7:00. Черга на освячення меду — довша за передсвяткову в супермаркеті»\n3: «— Це не забагато? (бабуся з відром) — Це про запас!»\n4: «Медовий Спас. Тепер офіційно можна їсти те, що потайки куштували ще в липні»`,ex:`14 серпня — Медовий (Маковий) Спас, традиційне українське свято з освяченням меду в церкві.`},
       {t:"Trade Offer / інфографіка",f:0,txt:`TRADE OFFER\nТи віддаєш: шматок жовтого бджолиного воску\nТи отримуєш: розписану українську писанку\n[ ACCEPT ]`,ex:`Бджолиний віск — традиційний матеріал для писанок: технікою воскового розпису майстрині наносять гарячий віск на яйце перед фарбуванням.`},
     ], bridge:`Але сьогодні над цією історією — і над самими бджолами — нависла загроза.` },
 
