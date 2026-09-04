@@ -293,7 +293,7 @@ BOOK.forEach(ch=>{
     const visual = img
       ? `<img class="memeimg" loading="lazy" src="${img}" alt="${esc(m.t)}: ${esc(m.txt).replace(/\n+/g,' ')}">`
       : `<div class="frame"><span class="ph">🖼 мем — плейсхолдер</span><div class="txt">${esc(m.txt)}</div></div>`;
-    html += `<div class="meme"><span class="tag${m.f?' star':''}">${esc(m.t)}</span>`+
+    html += `<div class="meme">`+
       visual + `<p class="caption">${m.ex}</p></div>`;
   });
   if(ch.bridge) html += `<div class="bridge"><div class="arrow">↓</div><p>${esc(ch.bridge)}</p></div>`;
