@@ -44,9 +44,9 @@
     min-height:44px;padding:8px 16px;font-size:14px;border-radius:999px;cursor:pointer;font-weight:700}
   header.bar button:active{transform:translateY(1px);background:var(--honey-deep);color:#fff}
   nav#toc{position:sticky;top:56px;z-index:40;background:var(--card);border-bottom:1px solid var(--line);
-    max-height:0;overflow:hidden;transition:max-height .3s ease}
-  nav#toc.open{max-height:75vh;overflow:auto}
-  nav#toc ol{margin:0;padding:8px 12px;list-style:none;columns:1;column-gap:16px}
+    max-height:0;overflow:hidden;visibility:hidden;transition:max-height .3s ease,visibility 0s linear .3s}
+  nav#toc.open{max-height:75vh;overflow:auto;visibility:visible;transition:max-height .3s ease}
+  nav#toc ol{margin:0 auto;max-width:880px;padding:8px 12px;list-style:none;columns:1;column-gap:16px}
   @media(min-width:640px){nav#toc ol{columns:2}}
   nav#toc li{margin:0;break-inside:avoid}
   nav#toc a{display:flex;align-items:center;gap:8px;min-height:44px;padding:6px 8px;border-radius:10px;color:var(--ink);text-decoration:none;font-size:15px;line-height:1.3}
@@ -128,7 +128,7 @@
   /* телефон: обкладинка менша, щоб «Читати» було на першому екрані; стоїть у кінці, щоб перебити загальне .hero .cover */
   @media(max-width:759px){.hero{padding-top:20px;gap:18px}.hero .cover{max-width:200px}.hero .sub{font-size:16px}.hero h1{font-size:38px;margin:6px 0 10px}.hero-cta{margin-top:18px}}
 </style>
-<noscript><style>nav#toc{max-height:none;position:static}#tocBtn{display:none}</style></noscript>
+<noscript><style>nav#toc{max-height:none;position:static;visibility:visible}#tocBtn{display:none}</style></noscript>
 </head>
 <body>
 <div id="progress"></div>
