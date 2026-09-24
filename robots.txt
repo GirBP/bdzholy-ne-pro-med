@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://girbp.github.io/bdzholy-ne-pro-med/sitemap.xml
